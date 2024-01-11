@@ -3,7 +3,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Install dependencies or any pre-build steps here"
+      - chmod +x scripts/install_dependencies
+      - scripts/install_dependencies
 
   build:
     commands:
@@ -11,7 +12,8 @@ phases:
 
   post_build:
     commands:
-      - echo "Post-build steps go here"
+      - chmod +x scripts/start_server
+      - scripts/start_server
 
 artifacts:
   files: /index.html

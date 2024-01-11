@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Install dependencies or any pre-build steps here"
+
+  build:
+    commands:
+      - echo "Build steps go here"
+
+  post_build:
+    commands:
+      - echo "Post-build steps go here"
+
+artifacts:
+  files: /index.html
+  base-directory: /var/www/html/
+  discard-paths: no
+  name: app-artifact

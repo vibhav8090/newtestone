@@ -13,4 +13,4 @@ post_build:
   commands:
     - echo "Post-build phase"
     - zip -r deployment-package.zip .
-
+chmod +x scripts/install_dependencies

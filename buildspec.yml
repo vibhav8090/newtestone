@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building the application"
+
+artifacts:
+  files: '**/*'
+  discard-paths: yes
+
+post_build:
+  commands:
+    - echo "Post-build phase"
+    - zip -r deployment-package.zip .
+

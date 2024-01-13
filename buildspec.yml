@@ -1,16 +1,14 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 14
   build:
     commands:
-      - echo "Building the application"
+      - echo "Build phase"
+      - mkdir -p /dist  # Create /dist directory if it doesn't exist
+      - cp index.html /dist/index.html
 
 artifacts:
-  files: '**/*'
-  discard-paths: yes
-
-post_build:
-  commands:
-    - echo "Post-build phase"
-    - zip -r deployment-package.zip .
-chmod +x scripts/install_dependencies
+  files: /dist/**

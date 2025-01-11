@@ -1,15 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/html/  # Default directory for Apache HTTPD
-
+  - source: /artifact.zip
+    destination: /var/www/html/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
       timeout: 300
       runas: root
   AfterInstall:
+    - location: scripts/unzip_artifact.sh
+      timeout: 300
+      runas: root
     - location: scripts/restart.sh
       timeout: 300
       runas: root
